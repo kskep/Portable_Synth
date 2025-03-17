@@ -77,3 +77,262 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Modern Synth UI Styling */
+:root {
+  --primary-color: #6366f1;
+  --primary-light: #818cf8;
+  --primary-dark: #4f46e5;
+  --accent-color: #f472b6;
+  --bg-dark: #1a1a2e;
+  --bg-medium: #212136;
+  --bg-light: #282842;
+  --text-light: rgba(255, 255, 255, 0.9);
+  --text-medium: rgba(255, 255, 255, 0.7);
+  --text-muted: rgba(255, 255, 255, 0.5);
+  --slider-track: rgba(255, 255, 255, 0.2);
+  --slider-thumb-border: rgba(255, 255, 255, 0.1);
+  --border-light: rgba(255, 255, 255, 0.1);
+}
+
+.synth-container {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--text-light);
+  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-medium) 100%);
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.synth-heading {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: var(--text-light);
+  text-align: center;
+  background: linear-gradient(90deg, var(--primary-light), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
+}
+
+.synth-section {
+  background: var(--bg-light);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-light);
+}
+
+.synth-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.control-group {
+  margin-bottom: 1.25rem;
+}
+
+.control-group:last-child {
+  margin-bottom: 0;
+}
+
+.control-label {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-medium);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.control-value {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background: var(--primary-dark);
+  border-radius: 0.25rem;
+  color: var(--text-light);
+  font-weight: 500;
+  min-width: 3rem;
+  text-align: center;
+  margin-left: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Slider styling */
+input[type="range"] {
+  appearance: none;
+  width: 100%;
+  height: 0.5rem;
+  background: var(--slider-track);
+  border-radius: 0.25rem;
+  outline: none;
+  margin: 0.5rem 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid var(--slider-thumb-border);
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+  transition: transform 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 1.25rem;
+  height: 1.25rem;
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid var(--slider-thumb-border);
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+  transition: transform 0.15s ease;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  transform: scale(1.1);
+}
+
+/* Select styles */
+select {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  border: 1px solid var(--border-light);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1.25rem;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+}
+
+/* Button styles */
+.play-button {
+  width: 100%;
+  background: linear-gradient(to right, var(--primary-color), var(--primary-dark));
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 1rem;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+}
+
+.play-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(79, 70, 229, 0.4);
+}
+
+.play-button:active {
+  transform: translateY(1px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .synth-container {
+    padding: 1.5rem;
+    border-radius: 1rem;
+  }
+  
+  .synth-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Custom waveform visualization styles */
+.waveform-display {
+  height: 80px;
+  width: 100%;
+  background: var(--bg-dark);
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  border: 1px solid var(--border-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.waveform-sine, 
+.waveform-square,
+.waveform-sawtooth,
+.waveform-triangle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.waveform-sine {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 80'%3E%3Cpath d='M0,40 Q50,0 100,40 Q150,80 200,40' fill='none' stroke='%236366f1' stroke-width='2'/%3E%3C/svg%3E");
+}
+
+.waveform-square {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 80'%3E%3Cpath d='M0,40 H50 V10 H150 V40 H200' fill='none' stroke='%236366f1' stroke-width='2'/%3E%3C/svg%3E");
+}
+
+.waveform-sawtooth {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 80'%3E%3Cpath d='M0,40 L100,10 L100,70 L200,40' fill='none' stroke='%236366f1' stroke-width='2'/%3E%3C/svg%3E");
+}
+
+.waveform-triangle {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 80'%3E%3Cpath d='M0,40 L50,10 L150,70 L200,40' fill='none' stroke='%236366f1' stroke-width='2'/%3E%3C/svg%3E");
+}
+
+/* Show the active waveform */
+.waveform-display[data-waveform="sine"] .waveform-sine,
+.waveform-display[data-waveform="square"] .waveform-square,
+.waveform-display[data-waveform="sawtooth"] .waveform-sawtooth,
+.waveform-display[data-waveform="triangle"] .waveform-triangle {
+  display: block;
+}
+
+/* ADSR Visualization */
+.adsr-display {
+  height: 80px;
+  width: 100%;
+  background: var(--bg-dark);
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  border: 1px solid var(--border-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.adsr-path {
+  stroke: var(--accent-color);
+  stroke-width: 2px;
+  fill: none;
+}
+
+.adsr-fill {
+  fill: rgba(244, 114, 182, 0.1);
+}
