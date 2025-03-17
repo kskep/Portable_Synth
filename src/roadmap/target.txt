@@ -1,0 +1,161 @@
+1. Core Synthesizer Features
+These are the essential building blocks for generating and shaping sound.
+
+Oscillators
+Waveforms:
+Basic: Sine, square, sawtooth, triangle.
+Advanced: Pulse with PWM (pulse width modulation), noise (white, pink, brown).
+Controls:
+Waveform selection.
+Frequency (pitch adjustment).
+Amplitude (volume control).
+Detune (for richer, thicker sounds).
+Phase offset (to alter the starting point of the waveform).
+Advanced Features:
+Multiple oscillators with individual settings.
+Oscillator syncing (locking phase between oscillators).
+Unison mode (stacking detuned voices for a broader sound).
+Filters
+Types:
+Low-pass (attenuates high frequencies).
+High-pass (attenuates low frequencies).
+Band-pass (isolates a frequency band).
+Notch (removes a specific frequency band).
+Controls:
+Cutoff frequency (sets the filter’s boundary).
+Resonance (Q factor, emphasizing frequencies near the cutoff).
+Filter type selection.
+Envelopes
+Types:
+ADSR (Attack, Decay, Sustain, Release) for:
+Amplitude (volume shaping over time).
+Filter cutoff (dynamic frequency shaping).
+Pitch (evolving pitch changes).
+Advanced: Multi-segment envelopes for more intricate modulation curves.
+Modulation
+Types:
+FM (Frequency Modulation): Modulating the frequency of one oscillator with another.
+AM (Amplitude Modulation): Modulating the amplitude of one oscillator with another.
+RM (Ring Modulation): Multiplying two waveforms for metallic, bell-like tones.
+Controls:
+Modulation depth (intensity of the effect).
+Modulation frequency (speed or pitch of the modulator, for FM and AM).
+Carrier and modulator waveform selection.
+LFOs (Low-Frequency Oscillators):
+Waveform selection (sine, square, sawtooth, triangle).
+Frequency (speed of modulation).
+Depth (amount of modulation).
+Target parameters (e.g., pitch, filter cutoff, volume).
+2. Effects (FX)
+Effects add depth and character to the sound, with adjustable parameters for creative control.
+
+Essential Effects
+Reverb: Simulates acoustic space.
+Parameters: Decay time, room size, damping.
+Delay: Repeats the sound over time.
+Parameters: Time (delay interval), feedback (repeat intensity), wet/dry mix (balance).
+Chorus: Thickens the sound with subtle detuning.
+Parameters: Rate (speed), depth (intensity), feedback.
+Distortion: Adds grit or warmth.
+Parameters: Drive (amount), tone (color), level (output volume).
+Additional Effects
+Flanger: Creates a sweeping, comb-filter effect.
+Parameters: Rate, depth, feedback.
+Phaser: Produces a swirling, phase-shifted sound.
+Parameters: Rate, depth, feedback.
+EQ: Shapes the frequency spectrum.
+Parameters: Frequency bands, gain, Q (bandwidth).
+Compressor: Controls dynamics.
+Parameters: Threshold, ratio, attack, release.
+3. Wavetable Creation and Manipulation
+A standout feature for a deep synthesizer, allowing users to craft custom waveforms.
+
+Core Features:
+Draw custom waveforms manually.
+Import waveforms from audio files.
+Edit existing wavetables (adjust shape, amplitude, etc.).
+Save and load wavetables for reuse.
+Manipulation Tools:
+Interpolation between waveforms (smooth transitions).
+Morphing between wavetables (gradual evolution).
+Apply effects to wavetables (e.g., filtering, distortion).
+Advanced:
+Wavetable scanning (moving through the wavetable dynamically).
+Granular synthesis (breaking waveforms into tiny grains for textured sounds).
+4. User Interface (UI) and Real-Time Feedback
+An intuitive UI with real-time feedback enhances usability and creativity.
+
+UI Layout
+Sections:
+Oscillator section (waveform and control adjustments).
+Filter section (type and parameter tweaks).
+Effects section (effect chain and settings).
+Modulation section (LFOs, envelopes, matrix).
+Global controls (master volume, polyphony settings).
+Controls: Knobs, sliders, and dropdowns for precise adjustments.
+Real-Time Feedback
+Visual Tools:
+Oscilloscope (displays the waveform in real time).
+Spectrum analyzer (shows frequency content).
+Envelope visualizers (graphs ADSR curves).
+Modulation matrix (maps modulation sources to targets).
+Responsiveness: Parameters update the sound instantly with minimal latency.
+5. Additional Features for Versatility
+These features make the synthesizer more playable and interactive.
+
+Performance Features
+Polyphony: Play multiple notes simultaneously.
+Portamento: Smooth glide between notes.
+Arpeggiator: Automatically cycles through held notes in patterns.
+Sequencer: Records and loops note sequences.
+Input Support: MIDI, on-screen keyboard, touch/gestural controls (for mobile).
+User Experience Enhancements
+Preset Management: Save, load, and share presets locally.
+Randomization: Generate random parameter settings for inspiration.
+Undo/Redo: Revert or reapply changes easily.
+Tooltips: Provide explanations for controls.
+Shortcuts: Keyboard commands for quick actions.
+6. Performance and Optimization
+Ensuring the synthesizer runs efficiently, even with complex setups.
+
+Strategies:
+Use efficient algorithms for oscillators and filters.
+Implement voice stealing (reusing voices when polyphony limits are reached).
+Offer options to cap voices or effects for lighter CPU load.
+Leverage Web Audio API nodes for built-in performance benefits.
+7. Accessibility and Educational Tools
+Making the synthesizer inclusive and a learning resource.
+
+Accessibility
+Keyboard navigation and ARIA labels for screen readers.
+High-contrast themes and adjustable control sizes.
+Educational Features
+Tutorials or guided tours of the interface.
+Explanations of synthesis concepts (e.g., what FM does).
+Interactive demos for each feature.
+Implementation Roadmap
+To manage complexity, I’ll prioritize features for an initial version and plan future enhancements.
+
+Initial Version (MVP)
+Oscillators: 2-3 oscillators with basic waveforms (sine, square, sawtooth, triangle).
+Filters: Low-pass filter with cutoff and resonance.
+Effects: Reverb and delay with basic controls.
+Modulation: FM and AM with depth and frequency adjustments.
+Envelopes: ADSR for amplitude and filter cutoff.
+UI: Simple layout with knobs and sliders.
+Feedback: Oscilloscope for waveform visualization.
+Presets: Local storage for saving/loading presets.
+Future Enhancements
+Oscillators: Add PWM, noise, unison mode, and syncing.
+Filters: Include high-pass, band-pass, and notch.
+Effects: Expand to chorus, distortion, EQ, compressor.
+Wavetables: Full creation and manipulation tools.
+Modulation: Add LFOs, multi-segment envelopes, RM, and a modulation matrix.
+Features: Polyphony, arpeggiator, sequencer, MIDI support.
+UI: Spectrum analyzer, envelope visualizers, advanced layout.
+Next Steps
+Project Setup: Create a Svelte project (using Svelte 4) and install Tone.js for audio processing.
+Core Implementation: Build oscillators, a low-pass filter, and basic UI controls.
+Feedback: Add an oscilloscope for real-time waveform display.
+Iterate: Gradually integrate additional features from the roadmap.
+This plan provides a deep, detailed blueprint for a synthesizer app with oscillators, filters, effects, and modulation options like FM, AM, and RM, plus advanced features like wavetable creation. It balances ambition with practicality, ensuring a solid foundation that can grow over time. Let me know if you’d like to refine any part or start building!
